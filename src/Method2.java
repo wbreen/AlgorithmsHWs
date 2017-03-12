@@ -4,7 +4,7 @@ import java.util.Arrays;
  * CSC 331 Programming Assignment 2
  * Method 2
  *
- * @author Scott Spurlock
+ * @author Scott Spurlock and William Breen
  * @version 2/28/17
  */
 public class Method2 {
@@ -19,8 +19,17 @@ public class Method2 {
 	 */
 	public int[] findTopK(int[] arr, int k) {
 		int[] results = new int[k];
+		int length = arr.length-1;
+		
 
-		// TBD
+		// sort the array, then read from the end
+		Arrays.sort(arr);
+		int resultArrayCounter = 0;
+		for (int i = length; i>length - k; i--){
+			results[resultArrayCounter] = arr[i];
+			resultArrayCounter++;
+		}
+		
 		
 		return results;
 	}
